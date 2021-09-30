@@ -1,0 +1,46 @@
+{% extends 'customers.html' %}
+
+{% block title  %}
+BOOKING DETAILS
+{% endblock title %}
+
+ {% block body %}
+ <div class="container mt-3" style="background-color:#f1f1f1">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Courier ID</th>
+      <th scope="col">Customer ID</th>
+      <th scope="col">Receiver Name</th>
+      <th scope="col">Receiver City</th>
+      <th scope="col">Receiver Phone</th>
+      <th scope="col">Branch ID</th>
+      <th scope="col">Courier Type</th>
+      <th scope="col">Courier Weight</th>
+      <th scope="col">Courier Date</th>
+      <th scope="col">Service</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in query %}
+    <tr>
+      <td>{{post.courid}}</td>
+      <td>{{post.custid}}</td>
+      <td>{{post.receivername}}</td>
+      <td>  {{post.receivercity}}     </td>
+      <td>   {{post.receiverphone}}   </td>
+      <td>   {{post.branchid}}  </td>
+      <td> {{post.couriertype}}   </td>
+      <td>  {{post.courierweight}} </td>
+      <td>   {{post.courierdate}}   </td>
+      <td>   {{post.service}}   </td>
+      <td><a href="/edit/{{post.courid}}"><button class="btn btn-primary">Edit </button> </a> </td>
+    <td><a href="/delete/{{post.courid}}"><button onclick="return confirm('Are you sure to Delete data');" class="btn btn-danger">Delete </button> </a> </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock body %} 

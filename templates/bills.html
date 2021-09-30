@@ -1,0 +1,45 @@
+{% extends 'customers.html' %}
+
+{% block title  %}
+BILLS
+{% endblock title %}
+
+ {% block body %}
+ <div class="container mt-3" style="background-color:#f1f1f1">
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Bill ID</th>
+      <th scope="col">Customer ID</th>
+      <th scope="col">Courier ID</th>
+      <th scope="col">Courier Type</th>
+      <th scope="col">Cost</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in query %}
+    <tr>
+      <th scope="row">{{post.billid}}</th>
+      <td>{{post.custid}}</td>
+      <td>{{post.courid}}</td>
+      <td> {{post.packtype}}   </td>
+      <td> {{post.charge}}   </td>
+    </tr>
+    
+  {% endfor %}
+  
+  
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock body %} 

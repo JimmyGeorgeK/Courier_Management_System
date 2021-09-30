@@ -1,0 +1,41 @@
+{% extends 'company.html' %}
+
+{% block title  %}
+ORDER DETAILS
+{% endblock title %}
+
+ {% block body %}
+ 
+<div class="container mt-3" style="background-color:#f1f1f1">
+<table class="table">
+  <thead>
+    <tr>
+    <th scope="col">Courier ID</th>
+      <th scope="col">Customer ID</th>
+      <th scope="col">Receiver Name</th>
+      <th scope="col">Receiver City</th>
+      <th scope="col">Receiver Phone</th>
+      <th scope="col">Courier Type</th>
+      <th scope="col">Courier Date</th>
+      <th scope="col">Approve</th>
+      <th scope="col">Reject</th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for post in query %}
+    <tr>
+    <th scope="row"></th>{{post.courid}}</th>
+      <td>{{post.apcustid}}</td>
+      <td>{{post.aprevname}}</td>
+      <td>  {{post.aprevcity}}     </td>
+      <td>   {{post.aprevphone}}   </td>
+      <td> {{post.apcourtype}}   </td>
+      <td>   {{post.apcourdate}}   </td>
+      <td><a href="/approve/{{post.courid}}"><button class="btn btn-primary">Approve </button> </a> </td>
+      <td><a href="/reject/{{post.courid}}"><button onclick="return confirm('Are you sure to Delete data');" class="btn btn-danger">Reject </button> </a> </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock body %} 

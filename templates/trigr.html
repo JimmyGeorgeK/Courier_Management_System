@@ -1,0 +1,46 @@
+{% extends 'customers.html' %}
+
+{% block title  %}
+BOOKING HISTORY
+{% endblock title %}
+
+ {% block body %}
+ <div class="container mt-3" style="background-color:#f1f1f1">
+<table class="table">
+  <thead>
+    <tr>
+    <th scope="col"> TID</th>
+      <th scope="col">Courier ID</th>
+      <th scope="col">Customer ID</th>
+      <th scope="col">Receiver Name</th>
+      <th scope="col">Receiver City</th>
+      <th scope="col">Receiver Phone</th>
+      <th scope="col">Branch ID</th>
+      <th scope="col">Courier Type</th>
+      <th scope="col">Courier Weight</th>
+      <th scope="col">Action</th>
+      <th scope="col">Times Stamp</th>
+      <th scope="col">Service</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in posts %}
+    <tr>
+      <th scope="row">{{post.tid}}</th>
+      <td>{{post.courid}}</td>
+      <td>{{post.custid}}</td>
+      <td>{{post.receivername}}</td>
+      <td>  {{post.receivercity}}     </td>
+      <td>   {{post.receiverphone}}   </td>
+      <td>   {{post.branchid}}  </td>
+      <td> {{post.couriertype}}   </td>
+      <td>  {{post.courierweight}} </td>
+      <td>   {{post.action}}   </td>
+      <td>   {{post.datestamp}}   </td>
+      <td>   {{post.service}}   </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock body %} 

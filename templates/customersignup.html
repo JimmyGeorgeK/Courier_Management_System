@@ -1,0 +1,118 @@
+{% extends 'indexbase.html' %}
+
+{% block title %}
+Customer Signup
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-3">
+
+<div class="row">
+
+
+<div class="col-md-4">
+
+</div>
+
+<div class="col-md-4 jumbotron" style="background-color:#f1f1f1">
+<br>
+<h4 class="text-center bg-info text-white">Sign Up Here</h4>
+<br>
+
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+
+<form action="/customersignup" method="POST">
+
+  <div class="form-group">
+    <label for="customername">Name</label>
+    <input type="text" class="form-control" id="customername" name="customername" required >
+
+  </div>
+
+  <div class="form-group">
+    <label for="customeremail">Email Address</label>
+    <input type="email" class="form-control" id="customeremail" name="customeremail" required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+
+  <div class="form-group">
+    <label for="customerpassword">Password</label>
+    <input type="password" class="form-control" id="customerpassword" name="customerpassword" required>
+  </div>
+
+  <div class="form-group">
+    <label for="customercity">City</label>
+    <input type="text" class="form-control" id="customercity" name="customercity" required >
+</div>
+  <div class="form-group">
+   Branch ID
+ <select class="form-control" id="branchid" name="branchid"  required>
+        <option selected></option>
+        {% for b in branch %}
+        <option value="{{b.id}}">{{b.id}}</option>
+        {%endfor%}
+ 
+ </select>
+ </div> 
+
+<div class="form-group">
+    <label for="customerdob">Date of Birth</label>
+    <input type="date" class="form-control" name="customerdob" placeholder="customerdob" required>
+  
+  </div>
+<br>
+ <div class="form-group">
+ <select class="form-control" id="gender" name="gender"  required>
+        <option selected>Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Others">Others</option>
+ 
+ </select>
+ <br>
+ </div> 
+<div class="form-group">
+
+    <input type="number" class="form-control" id="customernumber" name="customernumber" placeholder="Phone Number" required>
+  
+  </div>
+
+
+<br>
+  <button type="submit" class="btn btn-info btn-sm btn-block">Signup</button>
+</form>
+<br>
+Already a User <a href="/">Login</a>
+
+</div>
+
+<div class="col-md-4">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+{% endblock body %}

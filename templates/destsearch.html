@@ -1,0 +1,28 @@
+{% extends 'customers.html' %}
+
+{% block title %}
+Destination Search
+{% endblock title %}
+
+{% block body %}
+  <center><h4><b><span style="background-color: #FFFF00">AVAILABE DESTINATIONS</span></b></h4></center>
+  <div class="container mt-4" style="background-color:#f1f1f1">
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">DESTINATION</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in query %}
+    <tr>
+      <td>{{post.branchcity}}</td>
+    </tr>
+{% endfor %}
+  
+  </tbody>
+</table>
+</div>
+
+
+{% endblock body %}

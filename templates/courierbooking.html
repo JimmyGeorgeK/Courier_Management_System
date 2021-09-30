@@ -1,0 +1,119 @@
+{% extends 'customers.html' %}
+
+{% block title  %}
+COURIER BOOKING
+{% endblock title %}
+
+ {% block body %}
+
+ 
+ <div class="container">
+<div class="row">
+
+<div class="col-md-6">
+<div class="card" style="width: 40rem;">
+  <img src="static/d1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">DELIVERY</h5>
+    <p class="card-text">One Top Solution For All Your Parcel Delivery Requirements! </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">QUICK</li>
+    <li class="list-group-item">FASTEST</li>
+    <li class="list-group-item">RELIABLE</li>
+    <li class="list-group-item">SERVICE</li>
+  </ul>
+  
+</div>
+
+
+
+
+
+</div>
+<div class="col-md-5" style="background-color:#f1f1f1">
+
+<h4 class="text-center bg-dark text-primary">Book Your Courier</h4>
+
+
+
+
+<form action="/courierbooking" method="post" class="jumbotron">
+
+   <div class="form-group">
+     Customer ID
+    <input type="number" class="form-control" id="id" value={{current_user.id}} name="id" required>
+  
+  </div>
+
+  <div class="form-group">
+    Receiver Name
+    <input type="text" class="form-control" id="receivername" name="receivername"  required>
+  
+  </div>
+  
+   <div class="form-group">
+   Receiver City
+ <select class="form-control" id="receivercity" name="receivercity"  required>
+        <option selected></option>
+        {% for b in branch %}
+        <option value="{{b.branchcity}}">{{b.branchcity}}</option>
+        {%endfor%}
+ 
+ </select>
+ </div> 
+
+
+  <div class="form-group">
+     Receiver Number
+    <input type="number" class="form-control" id="receivernumber" name="receivernumber"  required>
+  
+  </div>
+
+ <div class="form-group">
+     Branch ID
+    <input type="text" class="form-control" id="branchid"  name="branchid"  required>
+  </div>
+
+  
+
+<div class="form-group">
+    Courier Type
+    <input type="text" class="form-control" id="couriertype" name="couriertype" required>
+  
+  </div>
+   <div class="form-group">
+     Courier weight
+    <input type="number" class="form-control" id="courierweight" name="courierweight" required>
+  
+  </div>
+  
+
+
+
+  <div class="form-group">
+    Sending Date
+    <input type="date" class="form-control" name="date" placeholder="date" required>
+  
+  </div>
+   
+
+  <div class="form-group">
+    Service
+    <input type="text" class="form-control" id="service"  name="service"  required>
+  
+  </div>
+
+
+  <button type="submit" class="btn btn-success btn-sm btn-block">Book</button>
+</form>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+{% endblock body %} 

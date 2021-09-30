@@ -1,0 +1,106 @@
+{% extends 'company.html' %}
+{% block title  %}
+APPROVE COURIER
+{% endblock title %}
+
+ {% block body %}
+
+ <div class="row">
+
+<div class="col-md-4">
+</div>
+
+<div class="col-md-4" style="background-color:#f1f1f1">
+ <br>
+<h4 class="text-center bg-danger text-white">Approve Courier</h4>
+
+
+
+<form action="/approve/{{posts.courid}}" method="post" class="jumbotron">
+
+ 
+
+   <div class="form-group">
+     Customer ID
+    <input type="number" class="form-control" id="id" value={{posts.custid}} name="id" required>
+  
+  </div>
+  <div class="form-group">
+     Courier ID
+    <input type="number" class="form-control" id="cid" value={{posts.courid}} name="cid" required>
+  
+  </div>
+
+  <div class="form-group">
+    Receiver Name
+    <input type="text" class="form-control" id="receivername" value={{posts.receivername}} name="receivername"  required>
+  
+  </div>
+  
+  <div class="form-group">
+    Receiver City
+    <input type="text" class="form-control" id="receivercity" value={{posts.receivercity}} name="receivercity"  required>
+  
+  </div>
+
+
+  <div class="form-group">
+     Receiver Number
+    <input type="number" class="form-control" id="receivernumber" value={{posts.receiverphone}} name="receivernumber"  required>
+  
+  </div>
+
+  <div class="form-group">
+     Branch ID
+    <input type="number" class="form-control" id="branchid" value={{posts.branchid}} name="branchid"  required>
+  
+  </div>
+
+<div class="form-group">
+    Courier Type
+    <input type="text" class="form-control" id="couriertype" value={{posts.couriertype}} name="couriertype" required>
+  
+  </div>
+   <div class="form-group">
+     Courier weight
+    <input type="number" class="form-control" id="courierweight" value={{posts.courierweight}} name="courierweight" required>
+  
+  </div>
+   <div class="form-group">
+     Courier Charge
+    <input type="number" class="form-control" id="couriercharge" value={{posts.courierweight*10}} name="couriercharge" required>
+  
+  </div>
+
+
+
+  <div class="form-group">
+    Sending Date
+    <input type="date" class="form-control" value={{posts.courierdate}}  name="date" placeholder="date" required>
+  
+  </div>
+  <div class="form-group">
+    Service
+    <input type="text" class="form-control" id="service" value={{posts.service}} name="service" required>
+  
+  </div>
+  
+
+
+
+  
+
+  <br>
+  <button type="submit" class="btn btn-success btn-sm btn-block">APPROVE</button>
+</form>
+
+
+
+
+
+
+
+
+{% endblock body %} 
+
+

@@ -1,0 +1,53 @@
+{% extends 'customers.html' %}
+
+{% block title  %}
+SEARCH DESTINATION
+{% endblock title %}
+
+ {% block body %}
+
+<div class="container mt-3" >
+
+<div class="row">
+
+
+<div class="col-md-4">
+
+</div>
+
+<div class="col-md-4 jumbotron">
+<h4 class="text-center bg-success text-white">Search Destination</h4>
+
+
+
+<form action="/search" method="post">
+<div class="form-group">
+    <label for="from"><b>From<b></label>
+    <input type="text" class="form-control" id="from" name="from" required>
+  </div>
+
+
+  <div class="form-group">
+    <label for="search"><b>Destination<b></label>
+    <input type="search" class="form-control" id="search" name="search" required>
+  </div>
+  <button type="submit" class="btn btn-info btn-sm btn-block">Search</button>
+</form>
+
+
+</div>
+
+<div class="col-md-4">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+{% endblock body %} 
